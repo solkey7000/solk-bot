@@ -44,6 +44,9 @@ bot.on('message', msg => {
     if (msg.content === "."){
         msg.channel.send("Sasi, Je t'aime très fort - de la part de ton Evil <3")
     }
+       if (msg.content === "aïe"){
+        msg.channel.send("ME CASSE PO LE DOS")
+    }
 });
 
 bot.login(cfg.token); //a garder en version desktop
