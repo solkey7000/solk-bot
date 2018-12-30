@@ -6,7 +6,7 @@ const prefix = ("?");
 
 bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
-    bot.user.setActivity('rien').catch(console.error)
+    bot.user.setActivity('Solk-bot / ?help').catch(console.error)
 });
 
 bot.on('guildMemberAdd', member => {
