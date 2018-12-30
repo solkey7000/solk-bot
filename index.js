@@ -11,7 +11,7 @@ bot.on('ready', function () {
 
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
-        return channel.send('Bienvenue sur le serveur de Alexpgm' + member.displayName)
+        return channel.send('Bienvenue sur le serveur.' + member.displayName)
         console.log(`${member.displayName} à rejoind le serveur.`)
     }).catch(console.error)
 });
@@ -35,6 +35,10 @@ bot.on('message', msg => {
     }
     if (msg.content === prefix + "youtube"){
         msg.channel.send("https://www.youtube.com/channel/UCE3V2oUrIlVppA8FN8H7NfA?view_as=subscriber")
+        console.log("Une personne a demandé pour aller sur ton site.")
+    }
+        if (msg.content === prefix + "help"){
+        msg.channel.send("Voici la liste des commandes : ")
         console.log("Une personne a demandé pour aller sur ton site.")
     }
 
