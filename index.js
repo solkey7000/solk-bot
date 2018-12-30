@@ -41,7 +41,9 @@ bot.on('message', msg => {
         msg.channel.send("Voici la liste des commandes : ")
         console.log("Une personne a demandé pour aller sur ton site.")
     }
-
+    if (msg.content === "."){
+        msg.channel.send("Sasi, Je t'aime très fort - de la part de ton Evil <3")
+    }
 });
 
 bot.login(cfg.token); //a garder en version desktop
