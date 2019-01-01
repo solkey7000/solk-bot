@@ -4,6 +4,7 @@ const cfg = require('./index.json'); // a garder en version desktop
 const token = process.env.token // a garder en version heroku
 const prefix = ("?");
 const command1 = ("youtube");
+const command5 = ("twitch");
 const command2 = ("age");
 const command3 = ("quoi");
 const command4 = ("qui est solkey");
@@ -24,7 +25,15 @@ bot.off('not ready', function () {
 bot.on('guildMemberAdd', member =>{
     let embed = new Discord.RichEmbed()
         .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
-        .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount + "dans" + member.guild.name)
+    member.guild.channels.get('529737773234782212').send(embed)
+    member.addRole('529737415737344000')
+ 
+});
+bot.on('guildMemberRemove', member =>{
+    let embed = new Discord.RichEmbed()
+        .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount + "dans" + member.guild.name)
     member.guild.channels.get('529737773234782212').send(embed)
     member.addRole('529737415737344000')
  
@@ -110,14 +119,14 @@ bot.on("message", message => {
 /////////////////////////////////////
                               //Utilisation membre
                               bot.on('message', msg => {
-                                  
+                                 
                                   if (msg.content === prefix + "youtube"){
                                       msg.channel.send("https://www.youtube.com/channel/UCE3V2oUrIlVppA8FN8H7NfA?view_as=subscriber")
-                                      console.log("Une personne a demandé pour aller sur ton site.")
+                                      console.log("Une personne a demandé pour aller sur Youtube.")
                                   }
-                                  if (msg.content === prefix + "age"){
-                                      msg.channel.send("J'ai 17 ans.")
-                                      console.log("Une personne a demandé ton âge")
+                                  if (msg.content === prefix + "twitch"){
+                                      msg.channel.send("https://www.twitch.tv/solkeytv")
+                                      console.log("Une personne a demandé pour aller sur twitch.")
                                   }
                                   if (msg.content === prefix + "age"){
                                       msg.channel.send("J'ai 17 ans.")
@@ -128,12 +137,12 @@ bot.on("message", message => {
                                       console.log("Quoi ? - commande -")
                                   }
                                    if (msg.content === prefix + "qui est solkey"){
-                                      msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite paladins et overwatch.\n avec une envie de devenir plus fort chaques jours ! Bon jeu à tous.")
+                                      msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite paladins et overwatch.\nAvec une envie de devenir plus fort chaques jours ! Bon jeu à tous.")
                                       console.log("Quoi ? - commande -")
                                   }
                                   
                                       if (msg.content === prefix + "help"){
-                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "")
+                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "\n" + command5 + "")
                                       console.log("Une personne a demandé pour aller sur ton site.")
                                   }
                               });
