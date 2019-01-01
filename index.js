@@ -45,7 +45,9 @@ bot.on('message', msg => {
         console.log("Une personne a demandé pour aller sur ton site.")
     }
         if (msg.content === prefix + "help"){
-        msg.channel.send("Voici la liste des commandes : ")
+        msg.channel.send("Voici la liste des commandes :
+         test 
+         test")
         console.log("Une personne a demandé pour aller sur ton site.")
     }
     if (msg.content === "."){
