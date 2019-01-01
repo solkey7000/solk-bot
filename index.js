@@ -8,11 +8,15 @@ bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
     bot.user.setActivity('Solk-bot / ?help').catch(console.error)
 });
+client.on('guildMemberAdd', member =>{
+  member.guid.channels.get('529622667402412073').send(':tada: **Bienvenue**' + member.user + ':smile: Nous sommes' + member.guild.memberCount);
+  console.log('+1')
+})
 
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
         return channel.send('Bienvenue sur le serveur.' + member.displayName)
-        console.log(`${member.displayName} à rejoind le serveur.`)
+        console.log(`${member.displayName} vient de rejoindre le serveur.`)
     }).catch(console.error)
 });
 
