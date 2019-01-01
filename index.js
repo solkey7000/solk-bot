@@ -4,10 +4,9 @@ const cfg = require('./index.json'); // a garder en version desktop
 const token = process.env.token // a garder en version heroku
 const prefix = ("?");
 const command1 = ("youtube");
-const command5 = ("twitch");
-const command2 = ("age");
-const command3 = ("quoi");
-const command4 = ("qui est solkey");
+const command2 = ("twitch");
+const command3 = ("qui est solkey");
+const command4 = ("quoi");
 
 
 //Paramètre du bot
@@ -128,22 +127,18 @@ bot.on("message", message => {
                                       msg.channel.send("https://www.twitch.tv/solkeytv")
                                       console.log("Une personne a demandé pour aller sur twitch.")
                                   }
-                                  if (msg.content === prefix + "age"){
-                                      msg.channel.send("J'ai 17 ans.")
-                                      console.log("Une personne a demandé ton âge")
-                                  }
                                   if (msg.content === prefix + "quoi"){
                                       msg.channel.send("Feur")
                                       console.log("Quoi ? - commande -")
                                   }
                                    if (msg.content === prefix + "qui est solkey"){
                                       msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite /paladins et overwatch.\nAvec une envie de devenir plus fort chaque jour ! Bon jeu à tous.")
-                                      console.log("Quoi ? - commande -")
+                                      console.log("Qui est solkey")
                                   }
                                   
                                       if (msg.content === prefix + "help"){
-                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "\n" + command5 + "")
-                                      console.log("Une personne a demandé pour aller sur ton site.")
+                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "")
+                                      console.log("Une personne a demandé les commandes")
                                   }
                               });
                               //Fin utilisation membre
