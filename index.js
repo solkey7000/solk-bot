@@ -34,6 +34,14 @@ bot.on('guildMemberAdd', member => {
         console.log(`${member.displayName} vient de rejoindre le serveur.`)
     }).catch(console.error)
 });
+bot.on('guildMemberAdd', member =>{
+    let embed = new Discord.RichEmbed()
+        .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+    member.guild.channels.get('529737773234782212').send(embed)
+    member.addRole('529737415737344000')
+ 
+});
 /*BAN DEFECTUEUX*/
 const ban = require('./kick et ban/ban');
 
