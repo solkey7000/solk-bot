@@ -18,9 +18,16 @@ bot.off('not ready', function () {
 /////////////////////////////////////
                               //Gestion administrateur
 bot.on('guildMemberAdd', member =>{
-  member.guid.channels.get('529631890286706710').send('Bienvenue' + member.displayName + 'Nous sommes' + member.guild.memberCount)
+  member.guid.channel.get('529631890286706710').send('Bienvenue' + member.displayName + 'Nous sommes' + member.guild.memberCount)
   console.log('+1')
 });
+
+bot.on('guildMemberAdd', member =>{
+  let embed = new Discord.RichEmbed()
+     .setDescription('Test' + member.user.username + ' test' + member.guild.name)
+     .setFooter('Nous sommes désormais' + member.guild.memberCount)
+     member.guild.channel.get('529631890286706710').send(embed)
+})
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
         return channel.send('Bienvenue sur le serveur.' + member.displayName)
