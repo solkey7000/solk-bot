@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 const cfg = require('./index.json'); // a garder en version desktop
 const token = process.env.token // a garder en version heroku
 const prefix = ("?");
+const command1 = ("bonjour");
 
 bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
@@ -34,8 +35,10 @@ bot.on('message', function (message){
 
 
 bot.on('message', msg => {
-    if (msg.content === "bonjour"){
-        msg.reply("Heureux de te revoir parmis nous.")
+    command1{
+      if (msg.content === "bonjour"){
+          msg.reply("Heureux de te revoir parmis nous.")
+      }
     }
     if (msg.content.match(/salut/i)) {
             msg.reply('Je suis d\'accord avec toi.')
@@ -45,7 +48,7 @@ bot.on('message', msg => {
         console.log("Une personne a demandé pour aller sur ton site.")
     }
         if (msg.content === prefix + "help"){
-        msg.channel.send("Voici la liste des commandes :\ntest\ntest")
+        msg.channel.send("Voici la liste des commandes ( ? + commande ):\nyoutube\n" + command1 + "\ntest "")
         console.log("Une personne a demandé pour aller sur ton site.")
     }
     if (msg.content === "."){
