@@ -24,7 +24,7 @@ bot.off('not ready', function () {
 bot.on('guildMemberAdd', member =>{
     let embed = new Discord.RichEmbed()
         .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
-        .setFooter('Nous sommes désormais ' + member.guild.memberCount + "dans" + member.guild.name)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount + " dans " + member.guild.name)
     member.guild.channels.get('529737773234782212').send(embed)
     member.addRole('529737415737344000')
  
