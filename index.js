@@ -9,6 +9,10 @@ bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
     bot.user.setActivity('Solk-bot / ?help').catch(console.error)
 });
+bot.off('not ready', function () {
+    console.log("Je suis en déconnexion.")
+    bot.user.setActivity('Solk-bot / OFF').catch(console.error)
+});
 
 //test
 bot.on('guildMemberAdd', member =>{
