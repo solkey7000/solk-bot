@@ -13,7 +13,7 @@ const command4 = ("qui est solkey");
 //Paramètre du bot
 bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
-    bot.user.setActivity('Solk-bot / ?help').catch(console.error)
+    bot.user.setActivity('Solk-bot BOT PRIVE / ?help').catch(console.error)
 });
 bot.off('not ready', function () {
     console.log("Je suis en déconnexion.")
