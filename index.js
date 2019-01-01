@@ -24,7 +24,7 @@ bot.on('guildMemberAdd', member =>{
 
 bot.on('guildMemberAdd', member =>{
   let embed = new Discord.RichEmbed()
-     .setDescription('Test' + member.user.username + ' test' + member.guild.name)
+     .setDescription('Test' + member.displayName + ' test' + member.guild.name)
      .setFooter('Nous sommes désormais' + member.guild.memberCount)
      member.guild.channel.get('529631890286706710').send(embed)
 })
@@ -34,13 +34,28 @@ bot.on('guildMemberAdd', member => {
         console.log(`${member.displayName} vient de rejoindre le serveur.`)
     }).catch(console.error)
 });
-
+/*BAN DEFECTUEUX*/
 const ban = require('./kick et ban/ban');
 
 
 bot.on('message', function (message){
     if (ban.match(message)){
         return ban.action(message)
+    }
+});
+/*Ban*/
+client.on('message',message =>{
+    if (!message.guild) return
+    let args = message.content.trim().split(/ +/g)
+
+    if (args[0].toLocaleLowerCase() === prefix + 'ban'){
+       if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande ;(")
+       let member = message.mentions.members.first()
+       if (!member) return message.channel.send("Veuillez mentionner un utilisateur :x:")
+       if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.owner.id) return message.channel.send("Vous ne pouvez pas bannir cet utilisateur :x:")
+       if (!member.bannable) return message.channel.send("Je ne peux pas bannir cet utilisateur :sunglass:")
+       message.guild.ban(member, {days: 7})
+       message.channel.send("**"+member.user.username + '** a été banni :white_check_mark:')
     }
 });
                               //Fin gestion administrateur
