@@ -142,7 +142,7 @@ bot.on("message", message => {
                                   }
                                   
                                       if (msg.content === prefix + "help"){
-                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "\n" + command5 + "")
+                                      msg.channel.send("**Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "\n" + command5 + "**")
                                       console.log("Une personne a demandé pour aller sur ton site.")
                                   }
                               });
