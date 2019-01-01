@@ -18,7 +18,7 @@ bot.off('not ready', function () {
 /////////////////////////////////////
                               //Gestion administrateur
 bot.on('guildMemberAdd', member =>{
-  member.guid.channels.get('529622667402412073').send('Bienvenue' + member.displayName + 'Nous sommes' + member.guild.memberCount)
+  member.guid.channels.get('529631890286706710').send('Bienvenue' + member.displayName + 'Nous sommes' + member.guild.memberCount)
   console.log('+1')
 });
 bot.on('guildMemberAdd', member => {
