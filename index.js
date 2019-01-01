@@ -137,7 +137,7 @@ bot.on("message", message => {
                                       console.log("Quoi ? - commande -")
                                   }
                                    if (msg.content === prefix + "qui est solkey"){
-                                      msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite paladins et overwatch.\nAvec une envie de devenir plus fort chaques jours ! Bon jeu à tous.")
+                                      msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite /paladins et overwatch.\nAvec une envie de devenir plus fort chaque jour ! Bon jeu à tous.")
                                       console.log("Quoi ? - commande -")
                                   }
                                   
