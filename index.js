@@ -11,7 +11,7 @@ bot.on('ready', function () {
 
 //test
 bot.on('guildMemberAdd', member =>{
-  member.guid.channels.get('529622667402412073').send(':tada: **Bienvenue**' + member.user + ':smile: Nous sommes' + member.guild.memberCount);
+  member.guid.channels.get('529622667402412073').send(':tada: **Bienvenue**' + member.user + ':smile: Nous sommes' + member.guild.memberCount)
   console.log('+1')
 });
 //test
