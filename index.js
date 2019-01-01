@@ -3,7 +3,11 @@ const bot = new Discord.Client();
 const cfg = require('./index.json'); // a garder en version desktop
 const token = process.env.token // a garder en version heroku
 const prefix = ("?");
-const command1 = ("bonjour");
+const command1 = ("youtube");
+const command2 = ("age");
+const command3 = ("quoi");
+const command4 = ("qui est solkey");
+
 
 //Paramètre du bot
 bot.on('ready', function () {
@@ -106,26 +110,31 @@ bot.on("message", message => {
 /////////////////////////////////////
                               //Utilisation membre
                               bot.on('message', msg => {
-
-                                  if (msg.content === "bonjour"){
-                                        msg.reply("Heureux de te revoir parmis nous.")
-                                    }
-                                  if (msg.content.match(/salut/i)) {
-                                          msg.reply('Je suis d\'accord avec toi.')
-                                  }
+                                  
                                   if (msg.content === prefix + "youtube"){
                                       msg.channel.send("https://www.youtube.com/channel/UCE3V2oUrIlVppA8FN8H7NfA?view_as=subscriber")
                                       console.log("Une personne a demandé pour aller sur ton site.")
                                   }
+                                  if (msg.content === prefix + "age"){
+                                      msg.channel.send("J'ai 17 ans.")
+                                      console.log("Une personne a demandé ton âge")
+                                  }
+                                  if (msg.content === prefix + "age"){
+                                      msg.channel.send("J'ai 17 ans.")
+                                      console.log("Une personne a demandé ton âge")
+                                  }
+                                  if (msg.content === prefix + "quoi"){
+                                      msg.channel.send("Feur")
+                                      console.log("Quoi ? - commande -")
+                                  }
+                                   if (msg.content === prefix + "qui est solkey"){
+                                      msg.channel.send("Je m'appelle Raphaël j'ai 17 ans, joueur fortnite paladins et overwatch.\n avec une envie de devenir plus fort chaques jours ! Bon jeu à tous.")
+                                      console.log("Quoi ? - commande -")
+                                  }
+                                  
                                       if (msg.content === prefix + "help"){
-                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\nyoutube\n" + command1 + "\ntest")
+                                      msg.channel.send("Voici la liste des commandes ( ? + commande ):\n" + command1 + "\n" + command2 + "\n" + command3 + "\n" + command4 + "")
                                       console.log("Une personne a demandé pour aller sur ton site.")
-                                  }
-                                  if (msg.content === "."){
-                                      msg.channel.send("Sasi, Je t'aime très fort - de la part de ton Evil <3")
-                                  }
-                                     if (msg.content === "aïe"){
-                                      msg.channel.send("ME CASSE PO LE DOS")
                                   }
                               });
                               //Fin utilisation membre
