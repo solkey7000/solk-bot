@@ -35,11 +35,10 @@ bot.on('message', function (message){
 
 
 bot.on('message', msg => {
-    command1{
-      if (msg.content === "bonjour"){
+  
+    if (msg.content === "bonjour"){
           msg.reply("Heureux de te revoir parmis nous.")
       }
-    }
     if (msg.content.match(/salut/i)) {
             msg.reply('Je suis d\'accord avec toi.')
     }
@@ -48,7 +47,7 @@ bot.on('message', msg => {
         console.log("Une personne a demandé pour aller sur ton site.")
     }
         if (msg.content === prefix + "help"){
-        msg.channel.send("Voici la liste des commandes ( ? + commande ):\nyoutube\n" + command1 + "\ntest "")
+        msg.channel.send("Voici la liste des commandes ( ? + commande ):\nyoutube\n" + command1 + "\ntest"")
         console.log("Une personne a demandé pour aller sur ton site.")
     }
     if (msg.content === "."){
