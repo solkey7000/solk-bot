@@ -18,7 +18,7 @@ bot.off('not ready', function () {
 /////////////////////////////////////
                               //Gestion administrateur
 bot.on('guildMemberAdd', member =>{
-  member.guid.channels.get('529622667402412073').send(':tada: **Bienvenue**' + member.user + ':smile: Nous sommes' + member.guild.memberCount)
+  member.guid.channels.get('529622667402412073').send('Bienvenue' + member.displayName + 'Nous sommes' + member.guild.memberCount)
   console.log('+1')
 });
 bot.on('guildMemberAdd', member => {
@@ -65,7 +65,7 @@ bot.on('message', function (message){
                               //Fin utilisation membre
 
 
-                              
+
 //NE PAS TOUCHER
 bot.login(cfg.token); //a garder en version desktop
 bot.login(token); //a garder en version heroku
